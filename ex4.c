@@ -1,8 +1,13 @@
 <stdio.h>
 #include<stdlib.h>
-
+//ask name part
 int main(){
   int a, i, heads=0,tails=0;
+  char str[10];
+printf("who are you?" );
+scanf("%s" ,str);
+printf("Hello, %s\n" ,str);
+//cointoss part
 printf("please toss your coin \n");
 for(a=0; a<3; a++){
 i = rand();
