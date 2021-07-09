@@ -1,19 +1,16 @@
-<stdio.h>
 #include<stdlib.h>
-
+#include<stdio.h>
+#include<time.h>
 int main(){
-  int a, i, heads=0,tails=0;
-printf("please toss your coin \n");
-for(a=0; a<3; a++){
-i = rand();
-if(i%2==0){
-printf("%d: Head\n",a+1);
-heads++;
+  srand(time(NULL));
+  int a, i,dice[2], total;
+ 
+printf("please roll your dice...\n");
+for(a=0; a<2; a++){
+  dice[a]=rand()%6+1;
+    printf("dice%d: %d\n",a+1,dice[a]);
+    total+=dice[a];
 }
-else{
-printf("%d: Tail\n",a+1);
-}
-}
-printf("Heads: %d, Tails: %d\n", heads, tails);
+ printf("total: %d\n",total);
 return 0;
 }
