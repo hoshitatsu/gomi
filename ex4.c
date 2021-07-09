@@ -1,24 +1,24 @@
-<stdio.h>
+#include<stdio.h>
 #include<stdlib.h>
+#include<time.h>
 //ask name part
 int main(){
-  int a, i, heads=0,tails=0;
+ srand(time(NULL));
+  int a, i,dice[2], total;
   char str[10];
 printf("who are you?" );
 scanf("%s" ,str);
 printf("Hello, %s\n" ,str);
-//cointoss part
-printf("please toss your coin \n");
-for(a=0; a<3; a++){
-i = rand();
-if(i%2==0){
-printf("%d: Head\n",a+1);
-heads++;
+//dice part
+ 
+printf("please roll your dice...\n");
+for(a=0; a<2; a++){
+  dice[a]=rand()%6+1;
+    printf("dice%d: %d\n",a+1,dice[a]);
+    total+=dice[a];
 }
-else{
-printf("%d: Tail\n",a+1);
-}
-}
-printf("Heads: %d, Tails: %d\n", heads, tails);
-return 0;
+ printf("total: %d\n",total);
+if(total>7)printf("%s" won! ,str);
+  else printf("%s lose" ,name);
+  return 0;
 }
